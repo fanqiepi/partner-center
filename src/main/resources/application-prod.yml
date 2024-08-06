@@ -1,13 +1,35 @@
 spring:
   application:
-    name: user-center
+    name: partner-center
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://119.45.251.110:3306/user_center
-    username: root
+    url: jdbc:mysql://119.45.251.110:3306/partner-center?characterEncoding=UTF-8
+    username: chalz
     password: 123456
   # session失效时间
   session:
     timeout: 86400
+    store-type: redis
+  redis:
+    host: 119.45.251.110
+    port: 6379
+    database: 1
+    password: 123456
 server:
-  address: 0.0.0.0
+  port: 8080
+  servlet:
+    context-path: /api
+    session:
+      cookie:
+        domain: 119.45.251.110
+        same-site: lax
+        secure: false
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: false
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      logic-delete-field: isDelete
+      logic-delete-value: 1
+      logic-not-delete-value: 0

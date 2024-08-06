@@ -8,6 +8,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.annotation.Rollback;
 
 import javax.annotation.Resource;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * 用户服务测试
@@ -66,5 +69,12 @@ public class UserServiceTest {
         checkPassword = "12345678";
         result = userService.userRegister(userAccount, userPassword, checkPassword, planetCode);
         Assertions.assertTrue(result > 0);
+    }
+
+    @Test
+    public void searchUsersByTags() {
+        List<String> tagNameList = Arrays.asList("Java", "Python");
+        List<User> userList = userService.searchUsersByTags(tagNameList);
+        Assert.assertNotNull(userList);
     }
 }

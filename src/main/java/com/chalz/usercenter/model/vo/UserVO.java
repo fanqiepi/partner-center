@@ -1,23 +1,19 @@
-package com.chalz.usercenter.model.domain;
+package com.chalz.usercenter.model.vo;
 
-import com.baomidou.mybatisplus.annotation.*;
-
-import java.io.Serializable;
-import java.util.Date;
 import lombok.Data;
 
+import java.util.Date;
+
 /**
- * 用户
- * @TableName user
+ * 用户包装类
+ * @author chalz
  */
-@TableName(value ="user")
 @Data
-public class User implements Serializable {
+public class UserVO {
 
     /**
      * id
      */
-    @TableId(type = IdType.AUTO)
     private long id;
 
     /**
@@ -39,11 +35,6 @@ public class User implements Serializable {
      * 登录账号
      */
     private String userAccount;
-
-    /**
-     * 密码
-     */
-    private String userPassword;
 
     /**
      * 电话
@@ -71,12 +62,6 @@ public class User implements Serializable {
     private Date updateTime;
 
     /**
-     * 是否删除
-     */
-    @TableLogic
-    private Integer isDelete;
-
-    /**
      * 用户角色 0 - 普通用户 1- 管理员
      */
     private Integer userRole;
@@ -92,7 +77,5 @@ public class User implements Serializable {
      */
     private String tags;
 
-
-    @TableField(exist = false)
     private static final long serialVersionUID = -3143256102618951283L;
 }

@@ -1,4 +1,4 @@
-package com.chalz.usercenter.model.domain.request;
+package com.chalz.usercenter.model.request;
 
 import lombok.Data;
 
@@ -13,7 +13,7 @@ import java.security.SecureRandom;
 @Data
 public class UserRegisterRequest implements Serializable {
 
-    private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 8965069826155332097L;
 
     private String userAccount;
 
