@@ -3,7 +3,7 @@ spring:
     name: partner-center
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://119.45.251.110:3306/partner-center?characterEncoding=UTF-8
+    url: jdbc:mysql://119.45.251.110:3306/partner?characterEncoding=UTF-8
     username: chalz
     password: 123456
   # session失效时间
